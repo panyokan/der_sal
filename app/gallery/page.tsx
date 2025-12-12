@@ -94,7 +94,7 @@ export default function GalleryPage() {
       id: 4,
       category: "color",
       title: "BLOND OMBRÉ",
-      description: "KRAFTVOLLER SMARAGD-VERLAUF MIT NATÜRLICHEM ANSATZ",
+      description: "Natürliches Blond-Ombré mit fließendem Übergang und hellen Spitzen",
       likes: 203,
       stylist: "INES",
       image: cu4,

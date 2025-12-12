@@ -29,7 +29,7 @@ import cu1 from "@/public/images/cu1.jpg";
 import cu2 from "@/public/images/cu2.jpg";
 import cu3 from "@/public/images/cu3.jpg";
 import cu4 from "@/public/images/cu4.jpg";
-import cu5 from "@/public/images/cu5.jpg";
+// import cu5 from "@/public/images/cu5.jpg";
 import cu6 from "@/public/images/cu6.jpg";
 import cu7 from "@/public/images/cu7.jpg";
 import cu8 from "@/public/images/cu8.jpg";
@@ -133,7 +133,7 @@ export default function HomePage() {
     cu2,
     cu3,
     cu4,
-    cu5,
+    // cu5,
     cu6,
     cu7,
     cu8,

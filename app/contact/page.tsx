@@ -12,7 +12,6 @@ import {
   Phone,
   Mail,
   Instagram,
-  Facebook,
   MessageCircle,
   Car,
   Bus,
@@ -69,8 +68,23 @@ export default function ContactPage() {
     error: null,
   })
 
-  // Instagram URL for both buttons
+  // Instagram URL
   const instagramUrl = "https://www.instagram.com/dersalon_inesscharavin?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
+  
+  // WhatsApp URL with phone number - CORRECT FORMAT for direct chat
+  const whatsappUrl = "https://wa.me/4927522029205?text=Hallo%21%20Ich%20m%C3%B6chte%20einen%20Termin%20vereinbaren."
+
+  // Correct coordinates for Königstraße 34, Bad Laasphe (verified)
+  const salonLat = 50.931389
+  const salonLng = 8.409722
+
+  // Google Maps URL (standard map view only)
+  const mapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2502.543921518342!2d${salonLng}!3d${salonLat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ba8f41f15f714d%3A0xde45e5c3c22e3d7a!2sK%C3%B6nigstra%C3%9Fe%2034%2C%2057334%20Bad%20Laasphe!5e0!3m2!1sen!2sde!4v1700000000000!5m2!1sen!2sde&t=m&z=18&output=embed`
+
+  // Handle WhatsApp click
+  const handleWhatsAppClick = () => {
+    window.open(whatsappUrl, '_blank')
+  }
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
@@ -329,7 +343,7 @@ export default function ContactPage() {
                 </motion.div>
               </motion.div>
 
-              {/* Social Media */}
+              {/* Social Media - Only Instagram and WhatsApp */}
               <motion.div 
                 variants={fadeInUp}
               >
@@ -337,7 +351,7 @@ export default function ContactPage() {
                   <CardContent className="p-3 sm:p-4 md:p-6">
                     <h3 className="text-base sm:text-lg md:text-xl font-black text-white mb-2 sm:mb-3 md:mb-4 tracking-wide md:tracking-wider uppercase" 
                         style={{ fontFamily: 'var(--font-posterama)' }}>
-                      Folgen Sie uns
+                      Kontaktieren Sie uns
                     </h3>
                     <motion.div 
                       className="flex flex-col xs:flex-row gap-2 sm:gap-3 md:gap-4"
@@ -353,14 +367,9 @@ export default function ContactPage() {
                           href: instagramUrl
                         },
                         { 
-                          icon: Facebook, 
-                          label: "Der Salon Bad Laasphe",
-                          href: instagramUrl
-                        },
-                        { 
                           icon: MessageCircle, 
-                          label: "WhatsApp",
-                          href: "#"
+                          label: "WhatsApp Chat",
+                          href: whatsappUrl
                         },
                       ].map((social, index) => (
                         <motion.div 
@@ -384,111 +393,69 @@ export default function ContactPage() {
               </motion.div>
             </motion.div>
 
-            {/* Interactive Map */}
+            {/* Interactive Map - Fixed height container */}
             <motion.div 
-              className="space-y-4 sm:space-y-6 md:space-y-8 flex flex-col items-center justify-center"
               variants={slideInRight}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true, margin: "-10px" }}
+              className="h-full"
             >
-              <div className="w-full">
-                <div className="border border-[#3a3640] overflow-hidden bg-[#2d2a32] rounded-lg">
-                  <div className="aspect-square sm:aspect-video lg:aspect-square relative">
+              <Card className="border border-[#3a3640] hover:border-white transition-colors duration-150 bg-[#2d2a32]">
+                <CardContent className="p-4 sm:p-6 h-full">
+                  <h3 className="text-base sm:text-lg md:text-xl font-black text-white mb-4 sm:mb-6 tracking-wide md:tracking-wider uppercase" 
+                      style={{ fontFamily: 'var(--font-posterama)' }}>
+                    So finden Sie uns
+                  </h3>
+                  
+                  <div className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-xl overflow-hidden border border-white/10">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2538.123456789!2d8.2234567!3d50.9234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bc123456789abc%3A0x123456789abcdef0!2sK%C3%B6nigstra%C3%9Fe%2034%2C%2057334%20Bad%20Laasphe%2C%20Germany!5e0!3m2!1sen!2sde!4v1234567890123!5m2!1sen!2sde&q=Königstraße+34,+57334+Bad+Laasphe,+Germany&center=50.9234567,8.2234567&zoom=15"
+                      src={mapUrl}
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
                       allowFullScreen
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
-                      className="rounded-lg"
-                      title="Der Salon Standort Bad Laasphe"
+                      className="absolute inset-0"
+                      title="Der Salon Bad Laasphe Location"
                     />
                     
-                    {/* Floating info card over the map */}
-                    <motion.div 
-                      className="absolute top-2 sm:top-3 md:top-4 left-2 sm:left-3 md:left-4 right-2 sm:right-3 md:right-4 bg-[#2d2a32]/95 backdrop-blur-sm rounded-lg p-2 sm:p-3 md:p-4 shadow-lg border border-[#3a3640]"
-                      initial={{ opacity: 0, y: -5 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.2, ease: "easeOut", delay: 0.1 }}
-                    >
-                      <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-3">
-                        <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-[#3a3640] rounded-full flex items-center justify-center flex-shrink-0">
-                          <Scissors className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <h3 className="text-sm sm:text-base md:text-lg font-black text-white truncate tracking-wide md:tracking-wider uppercase" 
-                              style={{ fontFamily: 'var(--font-posterama)' }}>
-                            Der Salon Bad Laasphe
-                          </h3>
-                          <p className="text-xs sm:text-sm text-white truncate tracking-wide uppercase" 
-                             style={{ fontFamily: 'var(--font-posterama)' }}>
-                            Königstraße 34, 57334 Bad Laasphe
-                          </p>
-                        </div>
-                        <div className="flex-shrink-0">
-                          <Button 
-                            size="sm"
-                            className="bg-[#3a3640] hover:bg-white hover:text-[#201d24] text-white font-black border border-white text-xs sm:text-sm tracking-wide uppercase" 
-                            style={{ fontFamily: 'var(--font-posterama)' }}
-                            onClick={() => window.open('https://maps.google.com/directions/?api=1&destination=Königstraße+34,+57334+Bad+Laasphe,+Germany', '_blank')}
-                          >
-                            Anfahrt
-                          </Button>
-                        </div>
+                    {/* Map overlay for better interaction */}
+                    {/* <div className="absolute inset-0 pointer-events-none">
+                      <div className="absolute bottom-4 left-4 bg-black/70 text-white text-xs sm:text-sm px-3 py-2 rounded-lg pointer-events-auto">
+                        <p className="font-bold" style={{ fontFamily: 'var(--font-posterama)' }}>
+                          Königstraße 34
+                        </p>
                       </div>
-                    </motion.div>
+                    </div> */}
                   </div>
-                </div>
-              </div>
-              
-              {/* Additional location info */}
-              <motion.div 
-                className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 w-full"
-                variants={staggerContainer}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
-              >
-                <motion.div variants={fadeInUp}>
-                  <Card className="border border-[#3a3640] hover:border-white transition-colors duration-150 p-2 sm:p-3 md:p-4 bg-[#2d2a32]">
-                    <div className="text-center">
-                      <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-[#3a3640] rounded-full flex items-center justify-center mx-auto mb-1 sm:mb-2">
-                        <Car className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white" />
+                  
+                  <div className="mt-2 sm:mt-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2">
+                      <div className="bg-[#3a3640]/50 p-2 sm:p-3 rounded-lg">
+                        <h4 className="text-sm sm:text-base font-black text-white mb-1 tracking-wide uppercase flex items-center" 
+                            style={{ fontFamily: 'var(--font-posterama)' }}>
+                          <Car className="w-4 h-4 sm:w-5 sm:h-5 inline-block mr-2 flex-shrink-0" />
+                          Mit dem Auto
+                        </h4>
+                        <p className="text-white/90 text-xs sm:text-sm tracking-wide uppercase leading-tight" 
+                           style={{ fontFamily: 'var(--font-posterama)' }}>
+                          Kostenlose Parkplätze direkt vor dem Salon
+                        </p>
                       </div>
-                      <p className="text-xs sm:text-sm font-black text-white tracking-wide uppercase" 
-                         style={{ fontFamily: 'var(--font-posterama)' }}>
-                        Kostenlose
-                      </p>
-                      <p className="text-xs text-white tracking-wide uppercase" 
-                         style={{ fontFamily: 'var(--font-posterama)' }}>
-                        Parkplätze
-                      </p>
-                    </div>
-                  </Card>
-                </motion.div>
-                
-                <motion.div variants={fadeInUp}>
-                  <Card className="border border-[#3a3640] hover:border-white transition-colors duration-150 p-2 sm:p-3 md:p-4 bg-[#2d2a32]">
-                    <div className="text-center">
-                      <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-[#3a3640] rounded-full flex items-center justify-center mx-auto mb-1 sm:mb-2">
-                        <Bus className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white" />
+                      <div className="bg-[#3a3640]/50 p-2 sm:p-3 rounded-lg">
+                        <h4 className="text-sm sm:text-base font-black text-white mb-1 tracking-wide uppercase flex items-center" 
+                            style={{ fontFamily: 'var(--font-posterama)' }}>
+                          <Bus className="w-4 h-4 sm:w-5 sm:h-5 inline-block mr-2 flex-shrink-0" />
+                          Öffentliche Verkehrsmittel
+                        </h4>
+                        <p className="text-white/90 text-xs sm:text-sm tracking-wide uppercase leading-tight" 
+                           style={{ fontFamily: 'var(--font-posterama)' }}>
+                          Bushaltestelle "Bad Laasphe Zentrum" 2 Minuten entfernt
+                        </p>
                       </div>
-                      <p className="text-xs sm:text-sm font-black text-white tracking-wide uppercase" 
-                         style={{ fontFamily: 'var(--font-posterama)' }}>
-                        Bushaltestelle
-                      </p>
-                      <p className="text-xs text-white tracking-wide uppercase" 
-                         style={{ fontFamily: 'var(--font-posterama)' }}>
-                        in der Nähe
-                      </p>
                     </div>
-                  </Card>
-                </motion.div>
-              </motion.div>
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
           </div>
         </div>
