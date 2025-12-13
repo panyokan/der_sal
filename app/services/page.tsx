@@ -48,8 +48,8 @@ export default function ServicesPage() {
       image: damenServiceImage,
       services: [
         {
-          name: "PRÄZISIONSSCHNITT & STYLING",
-          description: "EXPERTENSCHNITTE, ANGEPASST AN IHRE GESICHTSFORM UND IHREN LEBENSSTIL",
+          name: "PRÄZISIONSSCHNITT ",
+          description: "EXPERTENSCHNITTE, ANGEPASST AN IHRE GESICHTSFORM ",
           image: cutImage,
         },
         {
@@ -64,7 +64,7 @@ export default function ServicesPage() {
         },
         {
           name: "HAARVERLÄNGERUNGEN",
-          description: "LÄNGE UND VOLUMEN MIT NATÜRLICH AUSSEHENDEN EXTENSIONS",
+          description: "LÄNGE UND VOLUMEN MIT NATÜRLICH AUSSEHENDEN",
           image: extensionImage,
         },
       ],
@@ -82,7 +82,7 @@ export default function ServicesPage() {
         },
         {
           name: "BART TRIMMEN & STYLEN",
-          description: "PROFESSIONELLE BARTFORMUNG UND -PFLEGE",
+          description: "PROFESSIONELLE BARTFORMUNG ",
           image: bartTrimImage,
         },
         {
@@ -200,7 +200,7 @@ export default function ServicesPage() {
             </p>
             <p className="text-white text-lg sm:text-xl md:text-2xl font-black tracking-wide uppercase leading-relaxed" 
                style={{ fontFamily: 'var(--font-posterama)', fontWeight: 800, letterSpacing: '0.04em' }}>
-              👉 JETZT FRISEUR TERMIN IN BAD LAASPHE SICHERN
+               JETZT FRISEUR TERMIN IN BAD LAASPHE SICHERN
             </p>
           </motion.div>
         </div>
@@ -576,14 +576,14 @@ export default function ServicesPage() {
               whileTap={{ scale: 0.95 }}
               className="w-full xs:w-auto"
             >
-              <Button
+              {/* <Button
                 size="lg"
                 variant="outline"
                 className="border-2 border-[#3a3640] text-white hover:bg-[#3a3640] hover:text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-6 bg-transparent text-base sm:text-lg md:text-xl w-full xs:w-auto tracking-wide md:tracking-widest uppercase" 
                 style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.04em' }}
               >
                 JETZT ANRUFEN
-              </Button>
+              </Button> */}
             </motion.div>
           </motion.div>
         </div>

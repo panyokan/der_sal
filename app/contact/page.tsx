@@ -245,7 +245,7 @@ export default function ContactPage() {
                           whileInView="animate"
                           viewport={{ once: true }}
                         >
-                          <motion.div variants={fadeInUp}>
+                          {/* <motion.div variants={fadeInUp}>
                             <Badge className="bg-[#3a3640] text-white text-xs border border-white tracking-wide uppercase" 
                                    style={{ fontFamily: 'var(--font-posterama)' }}>
                               <Car className="w-3 h-3 mr-1 text-white" />
@@ -258,7 +258,7 @@ export default function ContactPage() {
                               <Bus className="w-3 h-3 mr-1 text-white" />
                               Bushaltestelle in der Nähe
                             </Badge>
-                          </motion.div>
+                          </motion.div> */}
                         </motion.div>
                       </div>
                     </div>
@@ -343,7 +343,7 @@ export default function ContactPage() {
                 </motion.div>
               </motion.div>
 
-              {/* Social Media - Only Instagram and WhatsApp */}
+              {/* Social Media - Instagram and WhatsApp */}
               <motion.div 
                 variants={fadeInUp}
               >
@@ -354,39 +354,45 @@ export default function ContactPage() {
                       Kontaktieren Sie uns
                     </h3>
                     <motion.div 
-                      className="flex flex-col xs:flex-row gap-2 sm:gap-3 md:gap-4"
+                      className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4"
                       variants={staggerContainer}
                       initial="initial"
                       whileInView="animate"
                       viewport={{ once: true }}
                     >
-                      {[
-                        { 
-                          icon: Instagram, 
-                          label: "@DerSalonBadLaasphe",
-                          href: instagramUrl
-                        },
-                        { 
-                          icon: MessageCircle, 
-                          label: "WhatsApp Chat",
-                          href: whatsappUrl
-                        },
-                      ].map((social, index) => (
-                        <motion.div 
-                          key={index}
-                          variants={fadeInUp}
-                          className="flex-1 min-w-0"
+                      {/* Instagram Button */}
+                      <motion.div 
+                        variants={fadeInUp}
+                        className="flex-1 min-w-0"
+                      >
+                        <Button
+                          className="bg-[#3a3640] hover:bg-white hover:text-[#201d24] text-white font-black border border-white transition-colors duration-150 w-full text-xs sm:text-sm tracking-wide uppercase h-full" 
+                          style={{ fontFamily: 'var(--font-posterama)' }}
+                          onClick={() => window.open(instagramUrl, '_blank')}
                         >
-                          <Button
-                            className="bg-[#3a3640] hover:bg-white hover:text-[#201d24] text-white font-black border border-white transition-colors duration-150 w-full text-xs sm:text-sm tracking-wide uppercase" 
-                            style={{ fontFamily: 'var(--font-posterama)' }}
-                            onClick={() => window.open(social.href, '_blank')}
-                          >
-                            <social.icon className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 mr-1 sm:mr-2 text-white flex-shrink-0" />
-                            <span className="truncate text-xs sm:text-sm">{social.label}</span>
-                          </Button>
-                        </motion.div>
-                      ))}
+                          <div className="flex items-center justify-center w-full">
+                            <Instagram className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 mr-1 sm:mr-2 text-white flex-shrink-0" />
+                            <span className="truncate text-xs sm:text-sm">Instagram</span>
+                          </div>
+                        </Button>
+                      </motion.div>
+
+                      {/* WhatsApp Button */}
+                      <motion.div 
+                        variants={fadeInUp}
+                        className="flex-1 min-w-0"
+                      >
+                        <Button
+                          className="bg-[#3a3640] hover:bg-white hover:text-[#201d24] text-white font-black border border-white transition-colors duration-150 w-full text-xs sm:text-sm tracking-wide uppercase h-full" 
+                          style={{ fontFamily: 'var(--font-posterama)' }}
+                          onClick={handleWhatsAppClick}
+                        >
+                          <div className="flex items-center justify-center w-full">
+                            <MessageCircle className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 mr-1 sm:mr-2 text-white flex-shrink-0" />
+                            <span className="truncate text-xs sm:text-sm">WhatsApp</span>
+                          </div>
+                        </Button>
+                      </motion.div>
                     </motion.div>
                   </CardContent>
                 </Card>
@@ -438,7 +444,7 @@ export default function ContactPage() {
                         </h4>
                         <p className="text-white/90 text-xs sm:text-sm tracking-wide uppercase leading-tight" 
                            style={{ fontFamily: 'var(--font-posterama)' }}>
-                          Kostenlose Parkplätze direkt vor dem Salon
+                          Kostenlose Parkplätze direkt vor dem Salon – nur 11 Minuten entfernt
                         </p>
                       </div>
                       <div className="bg-[#3a3640]/50 p-2 sm:p-3 rounded-lg">
@@ -449,7 +455,7 @@ export default function ContactPage() {
                         </h4>
                         <p className="text-white/90 text-xs sm:text-sm tracking-wide uppercase leading-tight" 
                            style={{ fontFamily: 'var(--font-posterama)' }}>
-                          Bushaltestelle "Bad Laasphe Zentrum" 2 Minuten entfernt
+                          Bushaltestelle "Bad Laasphe Gartenstraße" 4 Minuten entfernt
                         </p>
                       </div>
                     </div>

@@ -66,7 +66,7 @@ export default function GalleryPage() {
     {
       id: 1,
       category: "color",
-      title: "SONNENUNTERGANG BALAYAGE",
+      title: "Sunkissed",
       description: "WARME GOLDENE TÖNE MIT NATÜRLICHEN HIGHLIGHTS",
       likes: 127,
       stylist: "INES",
@@ -84,7 +84,7 @@ export default function GalleryPage() {
     {
       id: 3,
       category: "events",
-      title: "BRAUT-HOCHSTECKFRISUR",
+      title: "Brautstyling",
       description: "ELEGANTE HOCHZEITSFRISUR MIT BOTANISCHEN AKZENTEN",
       likes: 156,
       stylist: "INES",
@@ -94,7 +94,7 @@ export default function GalleryPage() {
       id: 4,
       category: "color",
       title: "BLOND OMBRÉ",
-      description: "Natürliches Blond-Ombré mit fließendem Übergang und hellen Spitzen",
+      description: "Natürliches Blond-Ombré mit fließendem Übergang ",
       likes: 203,
       stylist: "INES",
       image: cu4,
@@ -102,7 +102,7 @@ export default function GalleryPage() {
     {
       id: 6,
       category: "events",
-      title: "ABSCHLUSSBALL-GLAMOUR",
+      title: "Ballglanz",
       description: "HOLLYWOOD-WELLEN MIT GOLDENEN HIGHLIGHTS",
       likes: 178,
       stylist: "INES",
@@ -121,7 +121,7 @@ export default function GalleryPage() {
       id: 8,
       category: "cuts",
       title: "PIXIE-PERFEKTION",
-      description: "KANTIGER KURZHAARSCHNITT MIT TEXTURIERTEM STYLING",
+      description: "Kurzhaarschnitt mit Textur und Styling",
       likes: 145,
       stylist: "INES",
       image: cu8,
@@ -157,7 +157,7 @@ export default function GalleryPage() {
       id: 12,
       category: "events",
       title: "ROTER TEPPICH BEREIT",
-      description: "ELEGANTE HOCHSTECKFRISUR FÜR BESONDERE ANLÄSSE",
+      description: "Elegante Event‑Hochsteckfrisur",
       likes: 198,
       stylist: "INES",
       image: cu12,
@@ -616,14 +616,14 @@ export default function GalleryPage() {
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.2 }}
             >
-              <Button
+              {/* <Button
                 size="lg"
                 className="bg-[#2d2a32] hover:bg-[#3a3640] text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-6 border-2 border-[#3a3640] text-base sm:text-lg md:text-xl tracking-wide md:tracking-widest uppercase w-full xs:w-auto" 
                 style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.04em' }}
               >
                 <Instagram className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 mr-2 sm:mr-3 text-white" />
                 FOLGEN SIE @DERSALONBADLAASPHE
-              </Button>
+              </Button> */}
             </motion.div>
           </motion.div>
         </div>

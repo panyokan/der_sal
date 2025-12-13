@@ -338,9 +338,6 @@ export default function HomePage() {
                       {member.name}
                     </h3>
                     
-                    {/* Updated badge styling */}
-                    
-                    
                     {/* Responsive bio text */}
                     <p className="text-white text-sm sm:text-base md:text-lg mb-3 sm:mb-4 md:mb-6 tracking-widest uppercase leading-relaxed" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 700, letterSpacing: '0.035em' }}>
                       {member.bio}
@@ -387,7 +384,7 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* Gallery Preview - Updated with Responsive Controls */}
+      {/* Gallery Preview - Updated with Scroll Buttons on Cards */}
       <motion.section
         className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 md:px-6 bg-[#201d24]"
         initial="initial"
@@ -405,19 +402,33 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          {/* Horizontal Scroll Container with Responsive Controls */}
+          {/* Gallery Container with Scroll Buttons on Images */}
           <div className="relative">
-            {/* Left Scroll Button - Hidden on mobile */}
+            {/* Left Scroll Button - Positioned on Image Card */}
             {isClient && showLeftButton && (
               <motion.button
                 onClick={scrollLeft}
-                className="absolute left-1 sm:left-2 md:left-3 lg:left-4 top-1/2 transform -translate-y-1/2 z-10 p-2 sm:p-3 md:p-4 rounded-full bg-[#2d2a32] border-2 border-[#3a3640] text-white hover:bg-[#3a3640] transition-all duration-300 shadow-lg hidden sm:block"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                className="absolute left-4 sm:left-6 md:left-8 top-1/2 transform -translate-y-1/2 z-20 p-3 sm:p-4 md:p-5 rounded-full bg-[#201d24]/90 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-[#2d2a32] hover:border-white transition-all duration-300 shadow-2xl flex items-center justify-center"
+                whileHover={{ scale: 1.15, backgroundColor: "#3a3640" }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
               >
-                <ChevronLeft className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" />
+                <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
+              </motion.button>
+            )}
+
+            {/* Right Scroll Button - Positioned on Image Card */}
+            {isClient && showRightButton && (
+              <motion.button
+                onClick={scrollRight}
+                className="absolute right-4 sm:right-6 md:right-8 top-1/2 transform -translate-y-1/2 z-20 p-3 sm:p-4 md:p-5 rounded-full bg-[#201d24]/90 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-[#2d2a32] hover:border-white transition-all duration-300 shadow-2xl flex items-center justify-center"
+                whileHover={{ scale: 1.15, backgroundColor: "#3a3640" }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 1, x: 0 }}
+              >
+                <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
               </motion.button>
             )}
 
@@ -437,7 +448,6 @@ export default function HomePage() {
                   key={index}
                   className="group flex-shrink-0 relative overflow-hidden rounded-xl sm:rounded-2xl md:rounded-3xl border-2 border-white hover:border-white/70 transition-all duration-300"
                   variants={fadeInUp}
-                  whileHover={{ scale: 1.03 }}
                   transition={{ type: "spring", stiffness: 300 }}
                   style={{ 
                     width: cardDimensions.width, 
@@ -449,7 +459,7 @@ export default function HomePage() {
                       src={imageSrc}
                       alt={`Friseur Bad Laasphe - Haarstyling Beispiel ${index + 1}`}
                       fill
-                      className="object-contain group-hover:scale-105 transition-transform duration-500"
+                      className="object-contain transition-transform duration-500"
                       sizes="(max-width: 640px) 280px, (max-width: 768px) 350px, (max-width: 1024px) 400px, 450px"
                       priority={index < 2}
                     />
@@ -471,42 +481,23 @@ export default function HomePage() {
               ))}
             </motion.div>
 
-            {/* Right Scroll Button - Hidden on mobile */}
-            {isClient && showRightButton && (
-              <motion.button
-                onClick={scrollRight}
-                className="absolute right-1 sm:right-2 md:right-3 lg:right-4 top-1/2 transform -translate-y-1/2 z-10 p-2 sm:p-3 md:p-4 rounded-full bg-[#2d2a32] border-2 border-[#3a3640] text-white hover:bg-[#3a3640] transition-all duration-300 shadow-lg hidden sm:block"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-              >
-                <ChevronRight className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" />
-              </motion.button>
-            )}
-
-            {/* Mobile scroll indicators */}
-            <div className="flex justify-center space-x-2 sm:space-x-3 mt-4 sm:mt-6 md:hidden">
-              <motion.button
-                onClick={scrollLeft}
-                className="p-2 sm:p-3 rounded-full bg-[#2d2a32] border-2 border-[#3a3640] text-white hover:bg-[#3a3640]"
-                whileTap={{ scale: 0.9 }}
-              >
-                <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-              </motion.button>
-              <motion.button
-                onClick={scrollRight}
-                className="p-2 sm:p-3 rounded-full bg-[#2d2a32] border-2 border-[#3a3640] text-white hover:bg-[#3a3640]"
-                whileTap={{ scale: 0.9 }}
-              >
-                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-              </motion.button>
-            </div>
-
-            {/* Gradient fade effects on sides - Hidden on mobile */}
-            <div className="absolute left-0 top-0 bottom-0 w-4 sm:w-6 md:w-8 lg:w-12 xl:w-20 bg-gradient-to-r from-[#201d24] to-transparent pointer-events-none hidden sm:block" />
-            <div className="absolute right-0 top-0 bottom-0 w-4 sm:w-6 md:w-8 lg:w-12 xl:w-20 bg-gradient-to-l from-[#201d24] to-transparent pointer-events-none hidden sm:block" />
+            {/* Gradient fade effects on sides */}
+            <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-12 md:w-16 lg:w-20 xl:w-24 bg-gradient-to-r from-[#201d24] to-transparent pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-12 md:w-16 lg:w-20 xl:w-24 bg-gradient-to-l from-[#201d24] to-transparent pointer-events-none" />
           </div>
+
+          {/* Gallery Counter */}
+          <motion.div
+            className="text-center mt-6 sm:mt-8 md:mt-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <p className="text-white/60 text-sm sm:text-base md:text-lg tracking-wider uppercase" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 600, letterSpacing: '0.03em' }}>
+              {galleryImages.length} BILDER VON UNSEREN FRISEURARBEITEN
+            </p>
+          </motion.div>
 
           <motion.div
             className="text-center mt-8 sm:mt-12 md:mt-16"
