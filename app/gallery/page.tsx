@@ -66,8 +66,8 @@ export default function GalleryPage() {
     {
       id: 1,
       category: "color",
-      title: "Sunkissed",
-      description: "WARME GOLDENE TÖNE MIT NATÜRLICHEN HIGHLIGHTS",
+      title: "SUNKISSED BLONDE",
+      description: "Warmer, natürlicher Blondton mit sanftem Farbverlauf und präzisem, geradem Schnitt für einen frischen und gepflegten Look.",
       likes: 127,
       stylist: "INES",
       image: cu1,
@@ -75,8 +75,8 @@ export default function GalleryPage() {
     {
       id: 2,
       category: "cuts",
-      title: "MODERNER BOB",
-      description: "ELEGANTER PRÄZISIONSSCHNITT MIT SUBTILEN STUFEN",
+      title: "ELEGANTES BRAUTSTYLING",
+      description: "Romantische Hochsteckfrisur mit weichen Locken und strukturierten Details – perfekt für Hochzeiten und besondere Anlässe.",
       likes: 89,
       stylist: "INES",
       image: cu2,
@@ -84,8 +84,8 @@ export default function GalleryPage() {
     {
       id: 3,
       category: "events",
-      title: "Brautstyling",
-      description: "ELEGANTE HOCHZEITSFRISUR MIT BOTANISCHEN AKZENTEN",
+      title: "MODERNER BLONDER BOB",
+      description: "Eleganter, klar geschnittener Bob mit natürlichem Blondton für einen zeitlosen und modernen Auftritt.",
       likes: 156,
       stylist: "INES",
       image: cu3,
@@ -94,7 +94,7 @@ export default function GalleryPage() {
       id: 4,
       category: "color",
       title: "BLOND OMBRÉ",
-      description: "Natürliches Blond-Ombré mit fließendem Übergang ",
+      description: "Natürliches Blond-Ombre mit fließendem Übergang von dunklerem Ansatz zu hellen Spitzen für mehr Tiefe und Bewegung. ",
       likes: 203,
       stylist: "INES",
       image: cu4,
@@ -102,8 +102,8 @@ export default function GalleryPage() {
     {
       id: 6,
       category: "events",
-      title: "Ballglanz",
-      description: "HOLLYWOOD-WELLEN MIT GOLDENEN HIGHLIGHTS",
+      title: "KÜHLES BLOND-FINISH",
+      description: "Elegantes, kühles Blond mit seidigem Glanz und gleichmäßigem, glattem Styling für einen edlen Look.",
       likes: 178,
       stylist: "INES",
       image: cu6,
@@ -111,8 +111,8 @@ export default function GalleryPage() {
     {
       id: 7,
       category: "color",
-      title: "KUPPER-HIGHLIGHTS",
-      description: "SATTE KUPPERTÖNE MIT DIMENSIONALER TIEFE",
+      title: "WARMES BLOND MIT SANFTEN AKZENTEN",
+      description: "Natürliches Blond mit warmen, leicht kupfernen Nuancen für mehr Tiefe und Lebendigkeit.",
       likes: 112,
       stylist: "INES",
       image: cu7,
@@ -120,8 +120,8 @@ export default function GalleryPage() {
     {
       id: 8,
       category: "cuts",
-      title: "PIXIE-PERFEKTION",
-      description: "Kurzhaarschnitt mit Textur und Styling",
+      title: "GESTUFTER BLONDER SCHNITT",
+      description: "Mittellanger Blondschnitt mit sanften Stufen und Bewegung an den Spitzen für einen natürlichen Fall.",
       likes: 145,
       stylist: "INES",
       image: cu8,
@@ -129,8 +129,8 @@ export default function GalleryPage() {
     {
       id: 9,
       category: "events",
-      title: "FESTIVAL-ZÖPFE",
-      description: "BOHO-FLECHTFRISUR MIT FARBIGEN AKZENTEN",
+      title: "KLARER BLONDER BOB",
+      description: "Präziser, gerader Bob mit hellem Blondton für einen modernen und minimalistischen Stil.",
       likes: 167,
       stylist: "INES",
       image: cu9,
@@ -138,8 +138,8 @@ export default function GalleryPage() {
     {
       id: 10,
       category: "color",
-      title: "PLATINBLOND",
-      description: "EISBLONDE VERWANDLUNG MIT TONER",
+      title: "ROMANTISCHES BRAUTSTYLING",
+      description: "Sanfte, lange Wellen mit halb hochgestecktem Haar und eleganten Details – ideal für Hochzeiten und festliche Anlässe.",
       likes: 189,
       stylist: "INES",
       image: cu10,
@@ -147,8 +147,8 @@ export default function GalleryPage() {
     {
       id: 11,
       category: "cuts",
-      title: "SHAG-REVIVAL",
-      description: "70ER-INSPIRIERTER SHAG MIT MODERNEM TWIST",
+      title: "ELEGANTE HOCHSTECKFRISUR",
+      description: "Klassische, tief sitzende Hochsteckfrisur mit glattem Finish – zeitlos, elegant und perfekt für Events.",
       likes: 134,
       stylist: "INES",
       image: cu11,
@@ -156,8 +156,8 @@ export default function GalleryPage() {
     {
       id: 12,
       category: "events",
-      title: "ROTER TEPPICH BEREIT",
-      description: "Elegante Event‑Hochsteckfrisur",
+      title: "NATÜRLICHER FARBAUFFRISCHUNG",
+      description: "Warme, natürliche Farbnuancen mit sanftem Verlauf und leicht gestuften Spitzen für einen frischen, alltagstauglichen Look.",
       likes: 198,
       stylist: "INES",
       image: cu12,
@@ -490,10 +490,20 @@ export default function GalleryPage() {
                     </Badge>
                   </div>
                   <CardContent className="p-3 sm:p-4 md:p-6 flex-grow flex flex-col">
-                    <h3 className="text-base sm:text-lg md:text-xl font-black text-white mb-1 sm:mb-2 tracking-wide md:tracking-wider uppercase leading-tight flex-shrink-0" 
-                        style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.04em' }}>{item.title}</h3>
+                    {/* Updated Title with Extra Bold Weight */}
+                    <h3 className="text-base sm:text-lg md:text-2xl font-black font-bold text-white mb-1 sm:mb-2 tracking-wide md:tracking-wider uppercase leading-tight flex-shrink-0" 
+                        style={{ 
+                          fontFamily: 'var(--font-posterama)', 
+                          fontWeight: 900, 
+                          letterSpacing: '0.04em',
+                          fontSize: 'clamp(1rem, 1.5vw, 1.25rem)'
+                        }}>
+                      {item.title}
+                    </h3>
                     <p className="text-white text-sm sm:text-base md:text-lg tracking-wide uppercase leading-relaxed flex-grow" 
-                       style={{ fontFamily: 'var(--font-posterama)', fontWeight: 700, letterSpacing: '0.025em' }}>{item.description}</p>
+                       style={{ fontFamily: 'var(--font-posterama)', fontWeight: 500, letterSpacing: '0.025em' }}>
+                      {item.description}
+                    </p>
                   </CardContent>
                 </Card>
               </motion.div>
