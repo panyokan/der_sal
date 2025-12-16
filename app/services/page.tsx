@@ -19,9 +19,9 @@ import herrenCutImage from "/public/images/pexels-ryank-12304509.jpg"
 import bartTrimImage from "/public/images/pexels-cottonbro-3998427.jpg"
 import hotTowelImage from "/public/images/pexels-mostafameraji-3037215.jpg"
 import colorTouchupImage from "/public/images/pexels-shkrabaanthony-6599038.jpg"
-import doneImage from "/public/images/done.png"
-import treatmentImage from "/public/images/pexels-cottonbro-7440066.jpg"
-import manServiceImage from "/public/images/man_service.png"
+import doneImage from "/public/images/cu11.jpg"
+import treatmentImage from "/public/images/cu2.jpg"
+import manServiceImage from "/public/images/pexels-iamluisao-12706272.jpg"
 
 export default function ServicesPage() {
   // Animation variants
@@ -48,59 +48,23 @@ export default function ServicesPage() {
       image: damenServiceImage,
       services: [
         {
-          name: "PRÄZISIONSSCHNITT & STYLING",
-          price: "45-65€",
-          description: "EXPERTENSCHNITTE, ANGEPASST AN IHRE GESICHTSFORM UND IHREN LEBENSSTIL",
+          name: "PRÄZISIONSSCHNITT ",
+          description: "EXPERTENSCHNITTE, ANGEPASST AN IHRE GESICHTSFORM ",
           image: cutImage,
         },
         {
           name: "WASCHEN & FÖHNEN",
-          price: "55-75€",
           description: "KOMPLETTES STYLING-ERLEBNIS MIT PREMIUM-PRODUKTEN",
           image: washImage,
         },
         {
           name: "FESTLICHES STYLING",
-          price: "35-50€",
           description: "ELEGANTE HOCHSTECKFRISUREN UND EVENT-FRISUREN",
           image: curlImage,
         },
         {
           name: "HAARVERLÄNGERUNGEN",
-          price: "80-150€",
-          description: "LÄNGE UND VOLUMEN MIT NATÜRLICH AUSSEHENDEN EXTENSIONS",
-          image: extensionImage,
-        },
-      ],
-    },
-    {
-      title: "FARB-MAGIE",
-      icon: Palette,
-      color: "from-[#2d2a32] to-[#3a3640]",
-      image: colorMagicImage,
-      services: [
-        {
-          name: "FARB-VERWANDLUNG",
-          price: "70-120€",
-          description: "VOLLSTÄNDIGER FARBWECHSEL MIT PROFESSIONELLER BERATUNG",
-          image: cutImage,
-        },
-        {
-          name: "HIGHLIGHTS & LOWLIGHTS",
-          price: "60-100€",
-          description: "DIMENSIONALE FARBE FÜR NATÜRLICH AUSSEHENDE TIEFE",
-          image: washImage,
-        },
-        {
-          name: "BALAYAGE & OMBRÉ",
-          price: "80-140€",
-          description: "HANDGEMALTE TECHNIKEN FÜR NAHTLOSE FARBÜBERGÄNGE",
-          image: curlImage,
-        },
-        {
-          name: "FARBKORREKTUR",
-          price: "100-200€",
-          description: "EXPERTENKORREKTUR FÜR VORHERIGE FARBPANNEN",
+          description: "LÄNGE UND VOLUMEN MIT NATÜRLICH AUSSEHENDEN",
           image: extensionImage,
         },
       ],
@@ -113,25 +77,21 @@ export default function ServicesPage() {
       services: [
         {
           name: "KLASSISCHER HERRENSCHNITT",
-          price: "25-35€",
           description: "ZEITLOSE SCHNITTE MIT MODERNER PRÄZISION",
           image: herrenCutImage,
         },
         {
           name: "BART TRIMMEN & STYLEN",
-          price: "15-25€",
-          description: "PROFESSIONELLE BARTFORMUNG UND -PFLEGE",
+          description: "PROFESSIONELLE BARTFORMUNG ",
           image: bartTrimImage,
         },
         {
           name: "HEISSES HANDTUCH RASUR",
-          price: "30-40€",
           description: "TRADITIONELLES BARBIER-ERLEBNIS",
           image: hotTowelImage,
         },
         {
           name: "HERREN FARB-TOUCH-UP",
-          price: "40-60€",
           description: "GRAUABDECKUNG UND FARBVERBESSERUNG",
           image: colorTouchupImage,
         },
@@ -202,23 +162,6 @@ export default function ServicesPage() {
             <motion.div variants={fadeInUp} className="mb-6 sm:mb-0">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3 sm:mb-4 md:mb-6 flex items-center tracking-wider md:tracking-widest uppercase leading-tight" 
                   style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.05em' }}>
-                <Palette className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 mr-2 sm:mr-3 text-white flex-shrink-0" />
-                COLORATION BAD LAASPHE
-              </h2>
-              <p className="text-white text-base sm:text-lg md:text-xl leading-relaxed tracking-wide uppercase" 
-                 style={{ fontFamily: 'var(--font-posterama)', fontWeight: 700, letterSpacing: '0.03em' }}>
-                VON NATÜRLICHEN HIGHLIGHTS BIS ZU INTENSIVEN FARBVERWANDLUNGEN
-              </p>
-            </motion.div>
-          </motion.div>
-
-          <motion.div 
-            className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 mt-8 sm:mt-12 md:mt-16"
-            variants={staggerContainer}
-          >
-            <motion.div variants={fadeInUp} className="mb-6 sm:mb-0">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3 sm:mb-4 md:mb-6 flex items-center tracking-wider md:tracking-widest uppercase leading-tight" 
-                  style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.05em' }}>
                 <Scissors className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 mr-2 sm:mr-3 text-white flex-shrink-0" />
                 HERREN-STYLING BAD LAASPHE
               </h2>
@@ -227,18 +170,21 @@ export default function ServicesPage() {
                 PRÄZISE HERRENSCHNITTE UND BARTPFLEGE IN BAD LAASPHE
               </p>
             </motion.div>
-            
-            <motion.div variants={fadeInUp} className="mb-6 sm:mb-0">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3 sm:mb-4 md:mb-6 flex items-center tracking-wider md:tracking-widest uppercase leading-tight" 
-                  style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.05em' }}>
-                <Leaf className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 mr-2 sm:mr-3 text-white flex-shrink-0" />
-                HAAR-BEHANDLUNGEN
-              </h2>
-              <p className="text-white text-base sm:text-lg md:text-xl leading-relaxed tracking-wide uppercase" 
-                 style={{ fontFamily: 'var(--font-posterama)', fontWeight: 700, letterSpacing: '0.03em' }}>
-                HOCHWERTIGE PFLEGE FÜR GESUNDES, GLÄNZENDES HAAR
-              </p>
-            </motion.div>
+          </motion.div>
+
+          <motion.div 
+            className="mt-8 sm:mt-12 md:mt-16"
+            variants={fadeInUp}
+          >
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3 sm:mb-4 md:mb-6 flex items-center tracking-wider md:tracking-widest uppercase leading-tight" 
+                style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.05em' }}>
+              <Leaf className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 mr-2 sm:mr-3 text-white flex-shrink-0" />
+              HAAR-BEHANDLUNGEN
+            </h2>
+            <p className="text-white text-base sm:text-lg md:text-xl leading-relaxed tracking-wide uppercase" 
+               style={{ fontFamily: 'var(--font-posterama)', fontWeight: 700, letterSpacing: '0.03em' }}>
+              HOCHWERTIGE PFLEGE FÜR GESUNDES, GLÄNZENDES HAAR
+            </p>
           </motion.div>
 
           {/* Team Description */}
@@ -254,7 +200,7 @@ export default function ServicesPage() {
             </p>
             <p className="text-white text-lg sm:text-xl md:text-2xl font-black tracking-wide uppercase leading-relaxed" 
                style={{ fontFamily: 'var(--font-posterama)', fontWeight: 800, letterSpacing: '0.04em' }}>
-              👉 JETZT FRISEUR TERMIN IN BAD LAASPHE SICHERN
+               JETZT FRISEUR TERMIN IN BAD LAASPHE SICHERN
             </p>
           </motion.div>
         </div>
@@ -406,7 +352,6 @@ export default function ServicesPage() {
                               categoryIndex === 0 ? 'border-[#3a3640]' : 'border-[#3a3640]'
                             } text-xs sm:text-sm md:text-base tracking-wide uppercase`} 
                             style={{ fontFamily: 'var(--font-posterama)', fontWeight: 800, letterSpacing: '0.03em' }}>
-                              {service.price}
                             </Badge>
                           </div>
                         </div>
@@ -432,7 +377,7 @@ export default function ServicesPage() {
         </div>
       </motion.section>
 
-      {/* Special Packages */}
+      {/* Special Packages - Increased image height */}
       <motion.section 
         className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-[#2d2a32]"
         initial="initial"
@@ -480,8 +425,6 @@ export default function ServicesPage() {
             {[
               {
                 name: "DAS PREMIUM MAKEOVER",
-                price: "120€",
-                original: "150€",
                 description: "KOMPLETTES PREMIUM-PAKET FÜR IHRE PERFEKTE VERWANDLUNG IN BAD LAASPHE",
                 includes: ["SCHNITT & STYLE", "VOLLFARBE", "TIEFENBEHANDLUNG", "STYLING"],
                 popular: false,
@@ -489,8 +432,6 @@ export default function ServicesPage() {
               },
               {
                 name: "KOMPLETT-AUFFRISCHUNG",
-                price: "80€",
-                original: "95€",
                 description: "FRISCHE UND GLANZ FÜR IHREN LOOK IN BAD LAASPHE",
                 includes: ["SCHNITT & STYLE", "HIGHLIGHTS", "FÖHNEN", "HAARMASKE"],
                 popular: false,
@@ -498,8 +439,6 @@ export default function ServicesPage() {
               },
               {
                 name: "URBAN GENTLEMAN",
-                price: "55€",
-                original: "70€",
                 description: "MODERNES STYLING FÜR DEN ZEITGENÖSSISCHEN MANN IN BAD LAASPHE",
                 includes: ["HERRENSCHNITT", "BART TRIMMEN", "HEISSES HANDTUCH", "STYLING"],
                 popular: false,
@@ -512,7 +451,8 @@ export default function ServicesPage() {
                     ? 'border-[#3a3640] hover:border-white shadow-lg' 
                     : 'border-[#3a3640] hover:border-white'
                 }`}>
-                  <div className="relative h-40 sm:h-48 md:h-56 overflow-hidden flex-shrink-0">
+                  {/* Increased image height from h-40 to h-48, sm:h-48 to sm:h-56, md:h-56 to md:h-64 */}
+                  <div className="relative h-48 sm:h-56 md:h-94 overflow-hidden flex-shrink-0">
                     <Image
                       src={pkg.image}
                       alt={`${pkg.name} FRISEUR PAKET BAD LAASPHE`}
@@ -521,12 +461,6 @@ export default function ServicesPage() {
                       loading="lazy"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                    <div className="absolute top-3 sm:top-4 md:top-6 right-3 sm:right-4 md:right-6">
-                      <Badge className="bg-[#2d2a32] text-white transition-transform duration-200 hover:scale-105 border-2 border-[#3a3640] text-xs sm:text-sm md:text-base tracking-wide uppercase" 
-                             style={{ fontFamily: 'var(--font-posterama)', fontWeight: 800, letterSpacing: '0.03em' }}>
-                        {pkg.price}
-                      </Badge>
-                    </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                   </div>
                   <CardHeader className="pb-2 sm:pb-3 md:pb-4 flex-shrink-0 px-4 sm:px-6 md:px-8">
@@ -562,13 +496,9 @@ export default function ServicesPage() {
                       ))}
                     </motion.ul>
                     <div className="flex items-center justify-between mb-3 sm:mb-4 md:mb-6">
-                      <span className="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-wide md:tracking-widest" 
-                            style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.04em' }}>
-                        {pkg.price}
-                      </span>
                       <span className="text-sm md:text-base text-white line-through tracking-wide" 
                             style={{ fontFamily: 'var(--font-posterama)', fontWeight: 700, letterSpacing: '0.02em' }}>
-                        {pkg.original}
+                        {/* {pkg.original} */}
                       </span>
                     </div>
                     <motion.div
@@ -646,14 +576,14 @@ export default function ServicesPage() {
               whileTap={{ scale: 0.95 }}
               className="w-full xs:w-auto"
             >
-              <Button
+              {/* <Button
                 size="lg"
                 variant="outline"
                 className="border-2 border-[#3a3640] text-white hover:bg-[#3a3640] hover:text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-6 bg-transparent text-base sm:text-lg md:text-xl w-full xs:w-auto tracking-wide md:tracking-widest uppercase" 
                 style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.04em' }}
               >
                 JETZT ANRUFEN
-              </Button>
+              </Button> */}
             </motion.div>
           </motion.div>
         </div>

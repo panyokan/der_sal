@@ -33,12 +33,12 @@ export default function TeamPage() {
       icon: "palette",
       image: InesImage,
       objectPosition: "center 20%",
-      specialties: ["BALAYAGE & STRÄHNEN", "BLOND-EXPERTISE & GLOSSING", "HAARVERLÄNGERUNGEN", "HERREN- UND BARBER-CUTS"],
-      experience: "SEIT 2018 FRISEURIN · SEIT 2022 FRISEURMEISTERIN",
-      achievements: ["KLASSENBESTE IN DER BERUFSSCHULE", "4. PLATZ BEI DER LANDESMEISTERSCHAFT"],
+      specialties: ["BALAYAGE & STRÄHNEN", "BLOND-EXPERTISE", "HAARVERLÄNGERUNGEN", "HERREN- UND BARBER-CUTS"],
+      experience: "Seit 2018 Friseurin",
+      achievements: ["Berufsschul‑Primus", "4. PLATZ BEI DER "],
       funFact: "SCHON WÄHREND MEINER AUSBILDUNG WAR ICH KLASSENBESTE IN DER BERUFSSCHULE – EIN ERFOLG, DER MIR GEZEIGT HAT, WIE SEHR PRÄZISION, KREATIVITÄT UND DURCHHALTEVERMÖGEN MEINEN WEG PRÄGEN.",
       bio: "SEIT 2018 ARBEITE ICH MIT LEIDENSCHAFT ALS FRISEURIN, 2022 HABE ICH MEINEN MEISTERTITEL IM CRASHKURS ERFOLGREICH ABGESCHLOSSEN. MEIN FACHGEBIET SIND FARB- UND BLONDTECHNIKEN, BALAYAGE, STRÄHNEN, HAARVERLÄNGERUNGEN SOWIE PRÄZISES HERREN- UND BARBER-STYLING. FÜR MICH ZÄHLT NICHT NUR EIN PERFEKTES ERGEBNIS, SONDERN AUCH, DASS JEDER KUNDE MIT EINEM LOOK NACH HAUSE GEHT, DER ZU SEINER PERSÖNLICHKEIT PASST UND SICH IM ALLTAG GENAU SO GUT ANFÜHLT WIE AUF FOTOS.",
-      certifications: ["FRISEURMEISTERIN", "COLOR-SPEZIALISTIN", "BALAYAGE EXPERT", "HAARVERLÄNGERUNGEN"],
+      certifications: [], // Removed certifications
     },
     {
       name: "SANDRA KRAUSE",
@@ -46,11 +46,11 @@ export default function TeamPage() {
       image: SandraImage,
       objectPosition: "80% 6%",
       specialties: ["DAMENKURZHAAR", "DAUERWELLE", "KLASSISCHE HERRENFRISUREN"],
-      experience: "23 JAHRE BERUFSERFAHRUNG · 2 JAHRE SALONLEITUNG IN DER SCHWEIZ",
+      experience: "23 Jahre Erfahrung ",
       achievements: ["INTERNATIONALE ERFAHRUNG", "SALONLEITUNG"],
       funFact: "DURCH MEINE ZEIT ALS SALONLEITERIN IN DER SCHWEIZ KONNTE ICH NICHT NUR MEINE FACHLICHEN KOMPETENZEN VERTIEFEN, SONDERN AUCH WERTVOLLE ERFAHRUNG IN BERATUNG, ORGANISATION UND IM UMGANG MIT EINEM INTERNATIONALEN KUNDENKREIS SAMMELN.",
       bio: "MIT ÜBER 23 JAHREN BERUFSERFAHRUNG BRINGE ICH HANDWERK, ROUTINE UND LEIDENSCHAFT IN JEDES DETAIL. BESONDERS DAMENKURZHAARFRISUREN, DAUERWELLEN UND KLASSISCHE HERRENFRISUREN GEHÖREN ZU MEINEN STÄRKEN – PRÄZISE, TYPGERECHT UND MIT DEM BLICK FÜR DAS GEWISSE ETWAS. MEIN ANSPRUCH: KLASSISCHE TECHNIKEN MODERN INTERPRETIEREN – FÜR LOOKS, DIE ZEITLOS, GEPFLEGT UND INDIVIDUELL SIND.",
-      certifications: ["DAMENKURZHAAR-SPEZIALISTIN", "DAUERWELLE-EXPERTIN", "KLASSISCHE SCHNITTTECHNIKEN"],
+      certifications: [], // Removed certifications
     },
   ]
 
@@ -90,7 +90,7 @@ export default function TeamPage() {
                 key={index}
                 variants={fadeInUp}
                 transition={{ duration: 0.25 }}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center ${
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start ${
                   index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
                 }`}
               >
@@ -120,11 +120,10 @@ export default function TeamPage() {
 
                 {/* Content */}
                 <div className={`space-y-4 sm:space-y-6 md:space-y-8 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
-                  <div>
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3 sm:mb-4 tracking-widest uppercase leading-tight" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.08em' }}>
-                      {member.name}
-                    </h2>
-                  </div>
+                  {/* Name Title - Now aligned with image */}
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3 sm:mb-4 tracking-widest uppercase leading-tight" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.08em' }}>
+                    {member.name}
+                  </h2>
 
                   <p className="text-white text-base sm:text-lg md:text-xl leading-relaxed tracking-wider uppercase" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 700, letterSpacing: '0.035em' }}>
                     {member.bio}
@@ -154,7 +153,7 @@ export default function TeamPage() {
                     <div>
                       <h3 className="text-lg sm:text-xl md:text-2xl font-black text-white mb-3 sm:mb-4 flex items-center tracking-wider uppercase leading-tight" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.06em' }}>
                         <Award className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 mr-2 sm:mr-3 text-white" />
-                        ERFAHRUNG & ERFOLGE
+                       Kompetenz
                       </h3>
                       <p className="text-white text-sm sm:text-base md:text-lg mb-3 sm:mb-4 tracking-wider uppercase" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 700, letterSpacing: '0.03em' }}>{member.experience}</p>
                       
@@ -172,18 +171,8 @@ export default function TeamPage() {
                         ))}
                       </div>
 
-                      <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3">
-                        {member.certifications.map((cert, certIndex) => (
-                          <Badge
-                            key={certIndex}
-                            variant="outline"
-                            className="border-2 border-[#3a3640] text-white text-xs sm:text-sm md:text-base px-2 sm:px-3 md:px-4 py-0.5 sm:py-1 tracking-wider uppercase" 
-                            style={{ fontFamily: 'var(--font-posterama)', fontWeight: 700, letterSpacing: '0.025em' }}
-                          >
-                            {cert}
-                          </Badge>
-                        ))}
-                      </div>
+                      {/* Removed certifications section */}
+                      <div className="h-6"></div>
                     </div>
                   </div>
 
@@ -241,7 +230,7 @@ export default function TeamPage() {
               { number: "8+", label: "JAHRE ERFAHRUNG", icon: <Clock className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white" /> },
               { number: "500+", label: "ZUFRIEDENE KUNDEN", icon: <Smile className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white" /> },
               { number: "10+", label: "ZERTIFIKATE", icon: <Award className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white" /> },
-              { number: "100%", label: "LEIDENSCHAFT FÜR HAARE", icon: <Heart className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white" /> },
+              { number: "100%", label: "Leidenschaft", icon: <Heart className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white" /> },
             ].map((stat, index) => (
               <motion.div key={index} variants={fadeInUp} transition={{ duration: 0.25 }}>
                 <Card className="
@@ -269,7 +258,7 @@ export default function TeamPage() {
 
                     {/* NUMBER */}
                     <div
-                      className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-widest"
+                      className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-white tracking-widest"
                       style={{
                         fontFamily: "var(--font-posterama)",
                         fontWeight: 900,
