@@ -50,12 +50,12 @@ export function HeroSection() {
 
             <div className="relative z-10">
               <motion.h1
-                className="font-posterama text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-black leading-tight mb-3 sm:mb-4 md:mb-5 lg:mb-6 px-1 sm:px-2 tracking-wider uppercase"
+                className="font-posterama text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black leading-tight mb-4 sm:mb-5 md:mb-6 lg:mb-7 px-2 sm:px-3 tracking-wider uppercase"
                 style={{ fontFamily: "var(--font-posterama)" }}
                 variants={fadeInUp}
               >
                 Professionelle Haarpflege &{" "}
-                <span className="block sm:inline mt-1 sm:mt-0">Style Expertise</span>
+                <span className="block sm:inline mt-2 sm:mt-0">Style Expertise</span>
                 <br className="hidden sm:block" />
                 in Bad Laasphe
               </motion.h1>
@@ -132,8 +132,8 @@ export function HeroSection() {
               </motion.div> */}
 
               {/* Mobile tip */}
-              <motion.div className="mt-4 sm:mt-5 md:mt-6 lg:hidden" variants={fadeInUp}>
-                <p className="text-xs sm:text-sm text-white font-posterama max-w-xs mx-auto font-black tracking-wider uppercase" style={{ fontFamily: 'var(--font-posterama)' }}>
+              <motion.div className="mt-6 sm:mt-7 md:mt-8 lg:hidden" variants={fadeInUp}>
+                <p className="text-sm sm:text-base text-white/90 font-posterama max-w-sm mx-auto font-black tracking-wider uppercase leading-relaxed" style={{ fontFamily: 'var(--font-posterama)' }}>
                   Scrollen Sie nach unten, um mehr über unsere Services zu erfahren
                 </p>
               </motion.div>
