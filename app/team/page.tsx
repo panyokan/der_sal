@@ -1,18 +1,16 @@
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Star, Heart, Scissors, Palette, Clock, Smile, Award, Users } from "lucide-react"
+import { Star, Heart, Scissors, Clock, Smile, Award } from "lucide-react"
 import Image from "next/image"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { Footer } from "@/components/footer"
-import InesImage from "@/public/images/Ines.jpg"
-import SandraImage from "@/public/images/sandra.jpg"
+import InesImage from "@/public/images/owner1.png"
+import SandraImage from "@/public/images/owner2.png"
 import { motion } from "framer-motion"
 
 export default function TeamPage() {
-  // Ultra-fast animation variants
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -30,27 +28,23 @@ export default function TeamPage() {
   const teamMembers = [
     {
       name: "INES SCHARAVIN",
-      icon: "palette",
       image: InesImage,
       objectPosition: "center 20%",
       specialties: ["BALAYAGE & STRÄHNEN", "BLOND-EXPERTISE", "HAARVERLÄNGERUNGEN", "HERREN- UND BARBER-CUTS"],
       experience: "Seit 2018 Friseurin",
-      achievements: ["Berufsschul‑Primus", "4. PLATZ BEI DER "],
+      achievements: [ "4. PLATZ BEI DER ","Berufsschul‑Primus"],
       funFact: "SCHON WÄHREND MEINER AUSBILDUNG WAR ICH KLASSENBESTE IN DER BERUFSSCHULE – EIN ERFOLG, DER MIR GEZEIGT HAT, WIE SEHR PRÄZISION, KREATIVITÄT UND DURCHHALTEVERMÖGEN MEINEN WEG PRÄGEN.",
       bio: "SEIT 2018 ARBEITE ICH MIT LEIDENSCHAFT ALS FRISEURIN, 2022 HABE ICH MEINEN MEISTERTITEL IM CRASHKURS ERFOLGREICH ABGESCHLOSSEN. MEIN FACHGEBIET SIND FARB- UND BLONDTECHNIKEN, BALAYAGE, STRÄHNEN, HAARVERLÄNGERUNGEN SOWIE PRÄZISES HERREN- UND BARBER-STYLING. FÜR MICH ZÄHLT NICHT NUR EIN PERFEKTES ERGEBNIS, SONDERN AUCH, DASS JEDER KUNDE MIT EINEM LOOK NACH HAUSE GEHT, DER ZU SEINER PERSÖNLICHKEIT PASST UND SICH IM ALLTAG GENAU SO GUT ANFÜHLT WIE AUF FOTOS.",
-      certifications: [], // Removed certifications
     },
     {
       name: "SANDRA KRAUSE",
-      icon: "scissors",
       image: SandraImage,
       objectPosition: "80% 6%",
-      specialties: ["DAMENKURZHAAR", "DAUERWELLE", "KLASSISCHE HERRENFRISUREN"],
-      experience: "23 Jahre Erfahrung ",
-      achievements: ["INTERNATIONALE ERFAHRUNG", "SALONLEITUNG"],
+      specialties: ["DAUERWELLE", "DAMENKURZHAAR", "KLASSISCHE HERRENFRISUREN"],
+      experience: "23 Jahre Erfahrung",
+      achievements: ["SALONLEITUNG","INTERNATIONALE ERFAHRUNG"],
       funFact: "DURCH MEINE ZEIT ALS SALONLEITERIN IN DER SCHWEIZ KONNTE ICH NICHT NUR MEINE FACHLICHEN KOMPETENZEN VERTIEFEN, SONDERN AUCH WERTVOLLE ERFAHRUNG IN BERATUNG, ORGANISATION UND IM UMGANG MIT EINEM INTERNATIONALEN KUNDENKREIS SAMMELN.",
       bio: "MIT ÜBER 23 JAHREN BERUFSERFAHRUNG BRINGE ICH HANDWERK, ROUTINE UND LEIDENSCHAFT IN JEDES DETAIL. BESONDERS DAMENKURZHAARFRISUREN, DAUERWELLEN UND KLASSISCHE HERRENFRISUREN GEHÖREN ZU MEINEN STÄRKEN – PRÄZISE, TYPGERECHT UND MIT DEM BLICK FÜR DAS GEWISSE ETWAS. MEIN ANSPRUCH: KLASSISCHE TECHNIKEN MODERN INTERPRETIEREN – FÜR LOOKS, DIE ZEITLOS, GEPFLEGT UND INDIVIDUELL SIND.",
-      certifications: [], // Removed certifications
     },
   ]
 
@@ -90,9 +84,7 @@ export default function TeamPage() {
                 key={index}
                 variants={fadeInUp}
                 transition={{ duration: 0.25 }}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start ${
-                  index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
-                }`}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}
               >
                 {/* Image */}
                 <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
@@ -105,7 +97,7 @@ export default function TeamPage() {
                       <div className="aspect-square overflow-hidden rounded-lg sm:rounded-xl md:rounded-2xl">
                         <Image
                           src={member.image}
-                          alt={`Friseur ${member.name} -  in Bad Laasphe`}
+                          alt={`Friseur ${member.name} - in Bad Laasphe`}
                           width={500}
                           height={500}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
@@ -120,7 +112,6 @@ export default function TeamPage() {
 
                 {/* Content */}
                 <div className={`space-y-4 sm:space-y-6 md:space-y-8 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
-                  {/* Name Title - Now aligned with image */}
                   <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3 sm:mb-4 tracking-widest uppercase leading-tight" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.08em' }}>
                     {member.name}
                   </h2>
@@ -151,11 +142,21 @@ export default function TeamPage() {
                     </div>
 
                     <div>
+                      {/* Updated: Heart icon before Kompetenz */}
                       <h3 className="text-lg sm:text-xl md:text-2xl font-black text-white mb-3 sm:mb-4 flex items-center tracking-wider uppercase leading-tight" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.06em' }}>
-                        <Award className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 mr-2 sm:mr-3 text-white" />
-                       Kompetenz
+                        <Heart className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 mr-2 sm:mr-3 text-white" />
+                        KOMPETENZ
                       </h3>
-                      <p className="text-white text-sm sm:text-base md:text-lg mb-3 sm:mb-4 tracking-wider uppercase" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 700, letterSpacing: '0.03em' }}>{member.experience}</p>
+                      
+                      <motion.div 
+                        className="flex items-center mb-3 sm:mb-4"
+                        whileHover={{ x: 3 }}
+                        transition={{ type: "spring", stiffness: 500, duration: 0.15 }}
+                      >
+                                                    <Award className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white mr-2 sm:mr-3 flex-shrink-0" />
+
+                        <p className="text-white text-sm sm:text-base md:text-lg tracking-wider uppercase" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 700, letterSpacing: '0.03em' }}>{member.experience}</p>
+                      </motion.div>
                       
                       <div className="space-y-2 sm:space-y-3 md:space-y-4 mb-4 sm:mb-5 md:mb-6">
                         {member.achievements.map((achievement, achieveIndex) => (
@@ -170,9 +171,6 @@ export default function TeamPage() {
                           </motion.div>
                         ))}
                       </div>
-
-                      {/* Removed certifications section */}
-                      <div className="h-6"></div>
                     </div>
                   </div>
 
@@ -233,21 +231,8 @@ export default function TeamPage() {
               { number: "100%", label: "Leidenschaft", icon: <Heart className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white" /> },
             ].map((stat, index) => (
               <motion.div key={index} variants={fadeInUp} transition={{ duration: 0.25 }}>
-                <Card className="
-                  p-3 sm:p-4 md:p-5 lg:p-6 xl:p-7 
-                  text-center 
-                  hover:shadow-xl 
-                  transition-all duration-200 
-                  border-2 border-[#3a3640] 
-                  hover:border-white 
-                  bg-[#201d24] 
-                  hover:-translate-y-1
-                  flex items-center justify-center
-                  h-full
-                ">
+                <Card className="p-3 sm:p-4 md:p-5 lg:p-6 xl:p-7 text-center hover:shadow-xl transition-all duration-200 border-2 border-[#3a3640] hover:border-white bg-[#201d24] hover:-translate-y-1 flex items-center justify-center h-full">
                   <CardContent className="p-0 flex flex-col items-center justify-center text-center gap-2 sm:gap-3 md:gap-4">
-                    
-                    {/* ICON */}
                     <motion.div
                       className="text-white flex justify-center"
                       whileHover={{ rotate: 360, scale: 1.05 }}
@@ -256,30 +241,13 @@ export default function TeamPage() {
                       {stat.icon}
                     </motion.div>
 
-                    {/* NUMBER */}
-                    <div
-                      className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-white tracking-widest"
-                      style={{
-                        fontFamily: "var(--font-posterama)",
-                        fontWeight: 900,
-                        letterSpacing: "0.08em",
-                      }}
-                    >
+                    <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-white tracking-widest" style={{ fontFamily: "var(--font-posterama)", fontWeight: 900, letterSpacing: "0.08em" }}>
                       {stat.number}
                     </div>
 
-                    {/* LABEL */}
-                    <div
-                      className="text-white text-xs sm:text-sm md:text-base lg:text-lg font-black tracking-wider uppercase text-center px-1"
-                      style={{
-                        fontFamily: "var(--font-posterama)",
-                        fontWeight: 800,
-                        letterSpacing: "0.04em",
-                      }}
-                    >
+                    <div className="text-white text-xs sm:text-sm md:text-base lg:text-lg font-black tracking-wider uppercase text-center px-1" style={{ fontFamily: "var(--font-posterama)", fontWeight: 800, letterSpacing: "0.04em" }}>
                       {stat.label}
                     </div>
-
                   </CardContent>
                 </Card>
               </motion.div>
@@ -316,11 +284,7 @@ export default function TeamPage() {
             >
               <motion.div
                 animate={{ rotate: [0, 3, -3, 0] }}
-                transition={{
-                  duration: 1,
-                  repeat: Infinity,
-                  repeatDelay: 1,
-                }}
+                transition={{ duration: 1, repeat: Infinity, repeatDelay: 1 }}
               >
                 <Scissors className="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 lg:w-7 lg:h-7 mr-2 sm:mr-3 text-white" />
               </motion.div>
@@ -331,7 +295,6 @@ export default function TeamPage() {
       </motion.section>
       
       <Footer />
-      {/* Scroll to Top Button */}
       <ScrollToTop />
     </div>
   )

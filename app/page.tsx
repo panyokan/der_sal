@@ -27,8 +27,8 @@ import {
   Sparkle,
 } from "lucide-react";
 import Image from "next/image";
-import stylist1 from "@/public/images/ChatGPT Image Dec 17, 2025, 11_24_50 PM.png";
-import stylist2 from "@/public/images/ChatGPT Image Dec 17, 2025, 11_24_59 PM.png";
+import stylist1 from "@/public/images/owner1.png";
+import stylist2 from "@/public/images/owner2.png";
 import cu1 from "@/public/images/cu1.jpg";
 import cu2 from "@/public/images/cu2.jpg";
 import cu3 from "@/public/images/cu3.jpg";
