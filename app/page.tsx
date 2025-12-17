@@ -334,7 +334,7 @@ export default function HomePage() {
               WARUM UNSER FRISEURSALON IN BAD LAASPHE?
             </h3>
             <motion.div
-              className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 md:gap-6"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12"
               variants={staggerContainer}
             >
               {[
@@ -344,14 +344,14 @@ export default function HomePage() {
               ].map((item, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center justify-center space-x-2 sm:space-x-3 md:space-x-4"
+                  className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-5"
                   variants={fadeInUp}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-[#201d24] rounded-full flex items-center justify-center border-2 border-[#3a3640]">
-                    <item.icon className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" />
+                  <div className="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-[#201d24] rounded-full flex items-center justify-center border-2 border-[#3a3640] flex-shrink-0">
+                    <item.icon className="w-6 h-6 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-white" />
                   </div>
-                  <span className="text-white text-sm sm:text-base md:text-lg lg:text-xl tracking-wider uppercase leading-tight whitespace-nowrap" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 800, letterSpacing: '0.04em' }}>
+                  <span className="text-white text-sm sm:text-base md:text-lg lg:text-xl text-center sm:text-left tracking-wider uppercase leading-tight" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 800, letterSpacing: '0.04em' }}>
                     {item.text}
                   </span>
                 </motion.div>

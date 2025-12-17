@@ -97,8 +97,7 @@ export default function DatenschutzPage() {
                         </div>
                         <p className="text-white text-sm sm:text-base md:text-lg tracking-wide uppercase" 
                            style={{ fontFamily: 'var(--font-posterama)', fontWeight: 700, letterSpacing: '0.02em' }}>
-                          Königsstraße 34. 57334 Bad Laasphe<br/>
-                          
+                            Königsstraße 34. 57334 Bad Laasphe<br/>
                         </p>
                       </div>
                       
