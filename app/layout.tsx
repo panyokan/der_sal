@@ -90,17 +90,17 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://dersalon-badlaasphe.de"),
 
   // 🎯 FAVICON & APP ICONS
-  icons: {
-    icon: [
-      { url: '587706645_1621290235699206_2262831370884686475_n.jpg' ,type: 'image/jpg'},
-      // { url: '/favicon_16x16.png', type: 'image/png', sizes: '16x16' },
-      // { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
-    ],
-    // apple: [
-    //   { url: '/apple-icon.png' },
-    // ],
-    // shortcut: ['/shortcut-icon.png']
-  },
+ icons: {
+  icon: [
+    { url: '/favicon.ico', type: 'image/x-icon' },
+    { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+    { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+  ],
+  apple: [
+    { url: '/favicon-180x180.png', sizes: '180x180' },
+  ],
+},
+
   
   // 🔍 ADDITIONAL SEO FIELDS
   category: "beauty",
