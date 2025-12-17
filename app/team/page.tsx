@@ -29,7 +29,7 @@ export default function TeamPage() {
     {
       name: "INES SCHARAVIN",
       image: InesImage,
-      objectPosition: "center 20%",
+      objectPosition: "center 40%",
       specialties: ["BALAYAGE & STRÄHNEN", "BLOND-EXPERTISE", "HAARVERLÄNGERUNGEN", "HERREN- UND BARBER-CUTS"],
       experience: "Seit 2018 Friseurin",
       achievements: [ "4. PLATZ BEI DER ","Berufsschul‑Primus"],
@@ -39,7 +39,7 @@ export default function TeamPage() {
     {
       name: "SANDRA KRAUSE",
       image: SandraImage,
-      objectPosition: "80% 6%",
+      objectPosition: "80% 40%",
       specialties: ["DAUERWELLE", "DAMENKURZHAAR", "KLASSISCHE HERRENFRISUREN"],
       experience: "23 Jahre Erfahrung",
       achievements: ["SALONLEITUNG","INTERNATIONALE ERFAHRUNG"],
