@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Scissors, Palette, Sparkles, Leaf, Heart, Crown, Zap } from "lucide-react"
+import { Scissors, Palette, Sparkles, Leaf, Heart, Crown, Zap, Gem, Shield, Droplets } from "lucide-react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { ScrollToTop } from "@/components/scroll-to-top"
@@ -39,6 +39,54 @@ export default function ServicesPage() {
       }
     }
   };
+
+  const serviceGridData = [
+    {
+      title: "DAMEN-STYLING BAD LAASPHE",
+      description: "PRÄZISE SCHNITTE UND MODERNES STYLING FÜR DAMEN IN BAD LAASPHE",
+      icon: Crown,
+      color: "from-[#2d2a32] to-[#3a3640]",
+      borderColor: "border-[#3a3640]",
+      gradient: "bg-gradient-to-br from-[#2d2a32] to-[#3a3640]",
+      features: [
+        { text: "Präzisionshaarschnitte", icon: Scissors },
+        { text: "Moderne Styling-Techniken", icon: Sparkles },
+        { text: "Individuelle Beratung", icon: Heart },
+        { text: "Event-Frisuren", icon: Gem }
+      ],
+      cta: "DAMEN TERMIN BUCHEN"
+    },
+    {
+      title: "HERREN-STYLING BAD LAASPHE",
+      description: "PRÄZISE HERRENSCHNITTE UND BARTPFLEGE IN BAD LAASPHE",
+      icon: Scissors,
+      color: "from-[#2d2a32] to-[#3a3640]",
+      borderColor: "border-[#3a3640]",
+      gradient: "bg-gradient-to-br from-[#2d2a32] to-[#3a3640]",
+      features: [
+        { text: "Klassische Herrenschnitte", icon: Scissors },
+        { text: "Professionelle Bartpflege", icon: Shield },
+        { text: "Heiße Handtuch-Rasur", icon: Zap },
+        { text: "Moderne Styling-Trends", icon: Sparkles }
+      ],
+      cta: "HERREN TERMIN BUCHEN"
+    },
+    {
+      title: "HAAR-BEHANDLUNGEN",
+      description: "HOCHWERTIGE PFLEGE FÜR GESUNDES, GLÄNZENDES HAAR",
+      icon: Leaf,
+      color: "from-[#2d2a32] to-[#3a3640]",
+      borderColor: "border-[#3a3640]",
+      gradient: "bg-gradient-to-br from-[#2d2a32] to-[#3a3640]",
+      features: [
+        { text: "Tiefenreinigung & Pflege", icon: Droplets },
+        { text: "Glanzbehandlungen", icon: Sparkles },
+        { text: "Haarkuren & Masken", icon: Leaf },
+        { text: "Schutz vor Umwelteinflüssen", icon: Shield }
+      ],
+      cta: "BEHANDLUNG BUCHEN"
+    }
+  ];
 
   const serviceCategories = [
     {
@@ -134,9 +182,9 @@ export default function ServicesPage() {
         </div>
       </motion.section>
 
-      {/* Intro Section */}
+      {/* New Three Grid Section */}
       <motion.section 
-        className="py-10 sm:py-14 md:py-16 px-4 sm:px-6 lg:px-8 bg-[#201d24]"
+        className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-[#201d24]"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, margin: "-50px" }}
@@ -144,64 +192,102 @@ export default function ServicesPage() {
       >
         <div className="max-w-7xl mx-auto">
           <motion.div 
-            className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 items-start"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10"
             variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, margin: "-30px" }}
           >
-            <motion.div variants={fadeInUp} className="mb-6 sm:mb-0">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3 sm:mb-4 md:mb-6 flex items-center tracking-wider md:tracking-widest uppercase leading-tight" 
-                  style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.05em' }}>
-                <Crown className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 mr-2 sm:mr-3 text-white flex-shrink-0" />
-                DAMEN-STYLING BAD LAASPHE
-              </h2>
-              <p className="text-white text-base sm:text-lg md:text-xl leading-relaxed tracking-wide uppercase" 
-                 style={{ fontFamily: 'var(--font-posterama)', fontWeight: 700, letterSpacing: '0.03em' }}>
-                PRÄZISE SCHNITTE UND MODERNES STYLING FÜR DAMEN IN BAD LAASPHE
-              </p>
-            </motion.div>
-            
-            <motion.div variants={fadeInUp} className="mb-6 sm:mb-0">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3 sm:mb-4 md:mb-6 flex items-center tracking-wider md:tracking-widest uppercase leading-tight" 
-                  style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.05em' }}>
-                <Scissors className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 mr-2 sm:mr-3 text-white flex-shrink-0" />
-                HERREN-STYLING BAD LAASPHE
-              </h2>
-              <p className="text-white text-base sm:text-lg md:text-xl leading-relaxed tracking-wide uppercase" 
-                 style={{ fontFamily: 'var(--font-posterama)', fontWeight: 700, letterSpacing: '0.03em' }}>
-                PRÄZISE HERRENSCHNITTE UND BARTPFLEGE IN BAD LAASPHE
-              </p>
-            </motion.div>
-          </motion.div>
+            {serviceGridData.map((service, index) => (
+              <motion.div 
+                key={index} 
+                variants={fadeInUp}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="h-full"
+              >
+                <Card className="group relative overflow-hidden h-full bg-[#201d24] border-2 border-[#3a3640] hover:border-white transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gray-900/50">
+                  {/* Content */}
+                  <div className="relative z-10 h-full flex flex-col p-6 sm:p-8">
+                    {/* Icon Header */}
+                    <div className="mb-6 sm:mb-8 flex-shrink-0">
+                      <motion.div
+                        className={`w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 rounded-full ${service.gradient} border-2 ${service.borderColor} flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300`}
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.6 }}
+                      >
+                        <service.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                      </motion.div>
+                      
+                      <CardTitle className="text-center">
+                        <motion.h3 
+                          className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-2 sm:mb-3 tracking-wider uppercase leading-tight" 
+                          style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.04em' }}
+                          whileHover={{ scale: 1.02 }}
+                        >
+                          {service.title}
+                        </motion.h3>
+                        <motion.p 
+                          className="text-white text-sm sm:text-base md:text-lg tracking-wide uppercase leading-relaxed" 
+                          style={{ fontFamily: 'var(--font-posterama)', fontWeight: 700, letterSpacing: '0.025em' }}
+                        >
+                          {service.description}
+                        </motion.p>
+                      </CardTitle>
+                    </div>
 
-          <motion.div 
-            className="mt-8 sm:mt-12 md:mt-16"
-            variants={fadeInUp}
-          >
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3 sm:mb-4 md:mb-6 flex items-center tracking-wider md:tracking-widest uppercase leading-tight" 
-                style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.05em' }}>
-              <Leaf className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 mr-2 sm:mr-3 text-white flex-shrink-0" />
-              HAAR-BEHANDLUNGEN
-            </h2>
-            <p className="text-white text-base sm:text-lg md:text-xl leading-relaxed tracking-wide uppercase" 
-               style={{ fontFamily: 'var(--font-posterama)', fontWeight: 700, letterSpacing: '0.03em' }}>
-              HOCHWERTIGE PFLEGE FÜR GESUNDES, GLÄNZENDES HAAR
-            </p>
-          </motion.div>
+                    {/* Features List */}
+                    <CardContent className="flex-grow px-0 pb-6">
+                      <motion.div 
+                        className="space-y-3 sm:space-y-4 mb-6 sm:mb-8"
+                        variants={staggerContainer}
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{ once: true }}
+                      >
+                        {service.features.map((feature, featureIndex) => (
+                          <motion.div 
+                            key={featureIndex}
+                            className="flex items-center group/item"
+                            variants={fadeInUp}
+                            whileHover={{ x: 5 }}
+                            transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                          >
+                            <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full ${service.gradient} border ${service.borderColor} flex items-center justify-center mr-3 sm:mr-4 group-hover/item:scale-110 transition-transform duration-200`}>
+                              <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                            </div>
+                            <span className="text-white text-sm sm:text-base md:text-lg tracking-wide uppercase flex-grow" 
+                                  style={{ fontFamily: 'var(--font-posterama)', fontWeight: 700, letterSpacing: '0.02em' }}>
+                              {feature.text}
+                            </span>
+                          </motion.div>
+                        ))}
+                      </motion.div>
+                    </CardContent>
 
-          {/* Team Description */}
-          <motion.div 
-            className="mt-12 sm:mt-16 md:mt-20 p-6 sm:p-8 md:p-10 bg-[#2d2a32] rounded-xl sm:rounded-2xl md:rounded-3xl border-2 border-[#3a3640]"
-            variants={fadeInUp}
-          >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 sm:mb-6 tracking-wider md:tracking-widest uppercase leading-tight" 
-                style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.05em' }}>IHR FRISEUR IN BAD LAASPHE</h2>
-            <p className="text-white text-base sm:text-lg md:text-xl leading-relaxed mb-4 sm:mb-6 tracking-wide uppercase" 
-               style={{ fontFamily: 'var(--font-posterama)', fontWeight: 700, letterSpacing: '0.03em' }}>
-              UNSER FRISEUR-TEAM IN BAD LAASPHE STEHT FÜR PROFESSIONALITÄT, KREATIVITÄT UND LEIDENSCHAFT FÜR PERFEKTE HAARE. 
-            </p>
-            <p className="text-white text-lg sm:text-xl md:text-2xl font-black tracking-wide uppercase leading-relaxed" 
-               style={{ fontFamily: 'var(--font-posterama)', fontWeight: 800, letterSpacing: '0.04em' }}>
-               JETZT FRISEUR TERMIN IN BAD LAASPHE SICHERN
-            </p>
+                    {/* CTA Button */}
+                    <motion.div 
+                      className="mt-auto"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <Button
+                          className={`w-full py-3 sm:py-4 rounded-lg font-black tracking-widest uppercase text-sm sm:text-base md:text-lg border-2 border-[#3a3640] bg-[#2d2a32] text-white hover:bg-[#3a3640] transition-all duration-300 group-hover:shadow-lg shadow-xl`}
+                          style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.04em' }}
+                        >
+                          {service.cta}
+                        </Button>
+                      </motion.div>
+                    </motion.div>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </motion.section>
@@ -534,7 +620,7 @@ export default function ServicesPage() {
       >
         <div className="max-w-5xl mx-auto text-center">
           <motion.h2 
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 sm:mb-6 tracking-wider md:tracking-widest uppercase leading-tight" 
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 sm:mb-6 tracking-wider md:tracking-widest uppercase leading-tight" 
             style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.05em' }}
             variants={fadeInUp}
             whileHover={{ scale: 1.05 }}

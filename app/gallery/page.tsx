@@ -22,7 +22,7 @@ import cu9 from "@/public/images/cu9.jpg"
 import cu10 from "@/public/images/cu10.jpg"
 import cu11 from "@/public/images/cu11.jpg"
 import cu12 from "@/public/images/cu12.jpg"
-
+import cu13 from "@/public/images/cu13.jpg"
 export default function GalleryPage() {
   const [activeFilter, setActiveFilter] = useState("all")
   const [playingVideos, setPlayingVideos] = useState<{ [key: number]: boolean }>({})
@@ -56,7 +56,7 @@ export default function GalleryPage() {
   }
 
   const filters = [
-    { id: "all", label: "ALLE STYLES", count: 24 },
+    { id: "all", label: "ALLE STYLES", count: 23 },
     { id: "color", label: "FARB-ZAUBER", count: 8 },
     { id: "cuts", label: "PRÄZISIONS-SCHNITTE", count: 10 },
     { id: "events", label: "BESONDERE ANLÄSSE", count: 6 },
@@ -161,6 +161,15 @@ export default function GalleryPage() {
       likes: 198,
       stylist: "INES",
       image: cu12,
+    },
+    {
+      id: 13,
+      category: "cuts",
+      title: "Moderner Mittellanger Schnitt",
+      description: "Eleganter, mittellanger Haarschnitt mit natürlichem Volumen und sanften Wellen für einen zeitlosen, modernen Look.",
+      likes: 156,
+      stylist: "INES",
+      image: cu13,
     },
   ]
 
