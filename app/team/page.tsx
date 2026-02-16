@@ -191,9 +191,16 @@ export default function TeamPage() {
                     whileTap={{ scale: 0.97 }}
                     transition={{ type: "spring", stiffness: 500, duration: 0.15 }}
                   >
-                    <Button className="bg-[#2d2a32] text-white hover:bg-[#3a3640] font-black px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-4 border-2 border-[#3a3640] text-base sm:text-lg md:text-xl w-full sm:w-auto tracking-widest uppercase" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.06em' }}>
-                      TERMIN BEI {member.name.split(" ")[0]} BUCHEN
-                    </Button>
+                    <a
+                      href="https://www.planity.com/de-DE/der-salon-57334-bad-laasphe"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full sm:w-auto"
+                    >
+                      <Button className="bg-[#2d2a32] text-white hover:bg-[#3a3640] font-black px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-4 border-2 border-[#3a3640] text-base sm:text-lg md:text-xl w-full sm:w-auto tracking-widest uppercase" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.06em' }}>
+                        TERMIN BEI {member.name.split(" ")[0]} BUCHEN
+                      </Button>
+                    </a>
                   </motion.div>
                 </div>
               </motion.div>
@@ -277,19 +284,26 @@ export default function TeamPage() {
             whileTap={{ scale: 0.97 }}
             transition={{ type: "spring", stiffness: 500, duration: 0.15 }}
           >
-            <Button
-              size="lg"
-              className="bg-[#2d2a32] text-white hover:bg-[#3a3640] font-black px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-6 border-2 border-[#3a3640] text-lg sm:text-xl md:text-2xl tracking-widest uppercase w-full sm:w-auto" 
-              style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.06em' }}
+            <a
+              href="https://www.planity.com/de-DE/der-salon-57334-bad-laasphe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full sm:w-auto"
             >
-              <motion.div
-                animate={{ rotate: [0, 3, -3, 0] }}
-                transition={{ duration: 1, repeat: Infinity, repeatDelay: 1 }}
+              <Button
+                size="lg"
+                className="bg-[#2d2a32] text-white hover:bg-[#3a3640] font-black px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-6 border-2 border-[#3a3640] text-lg sm:text-xl md:text-2xl tracking-widest uppercase w-full sm:w-auto" 
+                style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.06em' }}
               >
-                <Scissors className="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 lg:w-7 lg:h-7 mr-2 sm:mr-3 text-white" />
-              </motion.div>
-              BERATUNGSTERMIN BUCHEN
-            </Button>
+                <motion.div
+                  animate={{ rotate: [0, 3, -3, 0] }}
+                  transition={{ duration: 1, repeat: Infinity, repeatDelay: 1 }}
+                >
+                  <Scissors className="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 lg:w-7 lg:h-7 mr-2 sm:mr-3 text-white" />
+                </motion.div>
+                BERATUNGSTERMIN BUCHEN
+              </Button>
+            </a>
           </motion.div>
         </div>
       </motion.section>

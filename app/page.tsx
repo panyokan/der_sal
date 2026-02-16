@@ -875,23 +875,30 @@ export default function HomePage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button
-                  size="lg"
-                  className="w-full bg-[#201d24] text-white hover:bg-[#2d2a32] font-black border-2 border-[#3a3640] tracking-widest text-base sm:text-lg md:text-xl uppercase py-3 sm:py-4 md:py-5"
-                  style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.06em' }}
+                <a
+                  href="https://www.planity.com/de-DE/der-salon-57334-bad-laasphe"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full"
                 >
-                  <motion.div
-                    animate={{ rotate: [0, 5, -5, 0] }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      repeatDelay: 3,
-                    }}
+                  <Button
+                    size="lg"
+                    className="w-full bg-[#201d24] text-white hover:bg-[#2d2a32] font-black border-2 border-[#3a3640] tracking-widest text-base sm:text-lg md:text-xl uppercase py-3 sm:py-4 md:py-5"
+                    style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.06em' }}
                   >
-                    <Scissors className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 mr-2 sm:mr-3 text-white" />
-                  </motion.div>
-                  TERMIN BUCHEN
-                </Button>
+                    <motion.div
+                      animate={{ rotate: [0, 5, -5, 0] }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        repeatDelay: 3,
+                      }}
+                    >
+                      <Scissors className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 mr-2 sm:mr-3 text-white" />
+                    </motion.div>
+                    TERMIN BUCHEN
+                  </Button>
+                </a>
               </motion.div>
             </motion.div>
           </div>
