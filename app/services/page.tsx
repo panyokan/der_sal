@@ -647,14 +647,21 @@ export default function ServicesPage() {
               whileTap={{ scale: 0.95 }}
               className="w-full xs:w-auto"
             >
-              <Button
-                size="lg"
-                className="bg-[#2d2a32] text-white hover:bg-[#3a3640] font-black px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-6 border-2 border-[#3a3640] text-base sm:text-lg md:text-xl w-full xs:w-auto tracking-wide md:tracking-widest uppercase" 
-                style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.04em' }}
+              <a
+                href="https://www.planity.com/de-DE/der-salon-57334-bad-laasphe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full xs:w-auto"
               >
-                <Scissors className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 mr-2 sm:mr-3 text-white" />
-                FRISEUR TERMIN VEREINBAREN
-              </Button>
+                <Button
+                  size="lg"
+                  className="bg-[#2d2a32] text-white hover:bg-[#3a3640] font-black px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-6 border-2 border-[#3a3640] text-base sm:text-lg md:text-xl w-full xs:w-auto tracking-wide md:tracking-widest uppercase" 
+                  style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.04em' }}
+                >
+                  <Scissors className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 mr-2 sm:mr-3 text-white" />
+                  FRISEUR TERMIN VEREINBAREN
+                </Button>
+              </a>
             </motion.div>
             <motion.div
               variants={fadeInUp}
