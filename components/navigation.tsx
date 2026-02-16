@@ -90,13 +90,17 @@ export function Navigation() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.6, duration: 0.4 }}
             >
-              <Link href="/contact" onClick={() => handleNavClick("/contact")}>
+              <a
+                href="https://www.planity.com/de-DE/der-salon-57334-bad-laasphe"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
                   <Button className="bg-gray-800 text-white hover:bg-gray-700 font-black border border-gray-600 tracking-wide text-xs sm:text-sm w-full px-3 sm:px-4 py-1.5 sm:py-2">
                     Termin buchen
                   </Button>
                 </motion.div>
-              </Link>
+              </a>
             </motion.div>
           </div>
 
