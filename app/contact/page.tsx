@@ -89,41 +89,25 @@ export default function ContactPage() {
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
-    // Set loading state
+
     setFormState({ loading: true, success: false, error: null })
 
     try {
-      // Prepare the data to send to backend
-      const submissionData = {
-        ...formData,
-        address: "dersalon" // This is the required field for your backend
-      }
-
-      console.log("Sending data to backend:", submissionData)
-
-      // Send POST request to your backend
-      const response = await fetch('https://algonod.onrender.com/contact-form', {
+      const response = await fetch('https://submit-form.com/kczeeGxEr', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
-        body: JSON.stringify(submissionData),
+        body: JSON.stringify(formData),
       })
 
-      // Check if the request was successful
       if (!response.ok) {
         throw new Error(`Server responded with status: ${response.status}`)
       }
 
-      // Parse the response
-      const result = await response.json()
-      console.log("Backend response:", result)
-
-      // Success!
       setFormState({ loading: false, success: true, error: null })
-      
-      // Reset form
+
       setFormData({
         name: "",
         email: "",
@@ -132,17 +116,15 @@ export default function ContactPage() {
         message: "",
       })
 
-      // Reset success message after 5 seconds
       setTimeout(() => {
         setFormState(prev => ({ ...prev, success: false }))
       }, 5000)
 
     } catch (error) {
-      console.error('Error submitting form:', error)
-      setFormState({ 
-        loading: false, 
-        success: false, 
-        error: error instanceof Error ? error.message : 'An unknown error occurred' 
+      setFormState({
+        loading: false,
+        success: false,
+        error: error instanceof Error ? error.message : 'An unknown error occurred'
       })
     }
   }
@@ -535,10 +517,7 @@ export default function ContactPage() {
                   whileInView="animate"
                   viewport={{ once: true }}
                 >
-                  {/* Hidden address field for backend */}
-                  <input type="hidden" name="address" value="dersalon" />
-                  
-                  <motion.div 
+                  <motion.div
                     className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4"
                     variants={staggerContainer}
                   >
